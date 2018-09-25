@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../public/reset.css">
+    <style>
+        body{
+            padding: 10px;
+        }
+        label,button{
+            display: block;
+        }
+        input{
+            height: 28px;
+            line-height: 28px;
+            padding: 0 6px;
+            margin: 0 10px;
+        }
+        button{
+            display: block;
+            padding: 4px 20px;
+            margin-bottom: 20px;
+        }
+        label{
+            height: 30px;
+            line-height: 30px;
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body>
+<label>用户名:<input type="text" data-role="id" maxlength="6" ></label>
+<label>密码:<input type="password" data-role="pw" maxlength="6" ></label>
+<button id="login" >登录</button>
+<button id="getStatus" >判断登陆</button>
+<button id="getInfo" >获取用户信息</button>
+<script src="../public/jquery-3.3.1.min.js" ></script>
+<script src="../public/md5.min.js" ></script>
+<script>
+    $(function () {
+        let data = {};
+        $('input').on('input',function () {
+            let val = $(this).val().trim();
+            let role = $(this).data('role');
+            data[role] = val;
+        });
+        $('#login').on('click',function () {
+            console.log(data);
+            $.ajax({
+                url:'/api/login',
+                method:'post',
+                contentType:'application/json',
+                data:JSON.stringify({"accounts":data.id,"password":md5(data.pw)}),
+                success:function (d) {
+                    console.log(d);
+                }
+            });
+        });
+        $('#getStatus').on('click',function () {
+            console.log(data);
+            $.ajax({
+                url:'/api/getstatus',
+                method:'post',
+                contentType:'application/json',
+                // data:JSON.stringify({"accounts":data.id,"password":md5(data.pw)}),
+                success:function (d) {
+                    console.log(d);
+                }
+            });
+        });
+        $('#getInfo').on('click',function () {
+            console.log(data);
+            $.ajax({
+                url:'/api/getinfo',
+                method:'post',
+                contentType:'application/json',
+                // data:JSON.stringify({"accounts":data.id,"password":md5(data.pw)}),
+                success:function (d) {
+                    console.log(d);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

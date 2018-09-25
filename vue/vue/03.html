@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue03</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>子组件data:{{childV}}</p>
+		<input type="text" v-model="a" >
+		<hr>
+		<child-component v-on:father-method="showV" v-bind:data="a" v-on:propadd="a+=1" ></child-component>
+	</div>
+	<h1>通过 Prop 向子组件传递数据</h1>
+	<script type="text/javascript" src="./vue.js" ></script>
+	<script type="text/javascript">
+Vue.component('child-component',{
+	data:function(){
+		return{
+			num:0,
+		};
+	},
+	methods:{
+		add:function(e){
+			console.log(e);
+			this.num+=1;
+		},
+		propV:function(e){
+			this.$emit('father-method',this.num,e);
+		}
+	},
+	props:['data'],
+	template:'<div>'+
+	'<p>{{"props:" + data}}</p>'+
+	'<p>{{num}}</p>'+
+	'<button v-on:click="$emit('+'\'propadd\''+')" >+1</button>'+
+	'<button v-on:click="add($event)" >add</button>'+
+	'<button v-on:click="propV($event)" >emit</button>'+
+	'</div>'
+});
+var app = new Vue({
+	el:'#app',
+	data:{
+		a:1,
+		childV:''
+	},
+	methods:{
+		showV:function(v){
+			this.childV = v;
+			console.log(arguments);
+		}
+	}
+});
+console.dir(app);
+	</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相册</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .hide{
+            display: none !important;
+        }
+        .show{
+            display: block !important;
+        }
+        .line{
+            margin: 10px 0;
+            line-height: 30px;
+            padding-left: 50px;
+        }
+        .content{
+            position: absolute;
+            top: 134px;
+            bottom: 0;
+            width: 100%;
+            background: #000;
+            color: #fff;
+            overflow-y: auto;
+        }
+        .content p{
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        .content li{
+            padding-left: 10px;
+        }
+        .content span{
+            display: inline-block;
+            line-height: 30px;
+            cursor: pointer;
+            color: #adaaaa;
+            padding: 0 6px;
+        }
+        .content span:hover{
+            background: #adaaaa;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<script id="liTemplate" type="text/x-dot-template">
+    {{~it:value:index}}
+    <li><span class="jump" data-type="{{=value.type}}" >{{=value.name}}</span></li>
+    {{~}}
+</script>
+<div class="control">
+    <h1>控制台</h1>
+    <div class="line" >
+        <input type="text" id="file" >
+        <button data-type="file" >add_file</button>
+    </div>
+    <div class="line" >
+        <input type="file" id="img" >
+        <button data-type="image" >add_image</button>
+    </div>
+    <hr>
+</div>
+<div class="content">
+    <p>当前目录：<span id="path" >root</span></p>
+    <ul id="list" >
+    </ul>
+</div>
+<script src="./../js/jquery-3.3.1.min.js" ></script>
+<script src="./../js/doT.min.js" ></script>
+<script>
+    function listSort(d) {
+        var dir = [];
+        var file = [];
+        for(var i=0;i<d.length;i++){
+            if(d[i].type==="back"){
+                dir.unshift(d[i]);
+            }
+            if(d[i].type==="dir"){
+                dir.push(d[i]);
+            }
+            if(d[i].type==="file"){
+                file.push(d[i]);
+            }
+        }
+        return dir.concat(file);
+    }
+    function showFile(d){
+        var data = {
+            path:d ? d:""
+        };
+        $.ajax({
+            url:"./getList",
+            type:"post",
+            data:data,
+            success:function (res) {
+                var li = doT.template($("#liTemplate").html());
+                if(res.success){
+                    if(res.data.length){
+                        if(d){
+                            res.data.push({name:"../",type:"back"});
+                        }
+                        $("#list").html(li(listSort(res.data)));
+                    }else {
+                        if(d){
+                            $("#list").html(li([{name:"../",type:"back"}]));
+                        }else {
+                            $("#list").html("<li>empty</li>");
+                        }
+                    }
+                }else {
+                    console.log(res);
+                }
+            }
+        });
+    }
+    function showPath(d){
+        var val = "root";
+        if(d.length>1){
+            for(var i=1;i<d.length;i++){
+                val += ' / ' + d[i];
+            }
+        }
+        $("#path").html(val);
+    }
+    $(function () {
+        var filePath = [""];
+        showFile();
+        var file = document.getElementById('img');
+        $("button").on("click",function () {
+            var type = $(this).data("type");
+            var dataPath = "";
+            if(filePath.length>1) {
+                for(var i=0;i<filePath.length;i++){
+                    dataPath += (filePath[i] + '\\');
+                }
+            }
+            dataPath = dataPath.slice(0,dataPath.length-1);
+            if(type){
+                if(type==="file"){
+                    var val = $("#file").val().trim();
+                    if(val){
+                        $.ajax({
+                            type:"post",
+                            data:{
+                                file:val,
+                                path:dataPath
+                            },
+                            url:"./mkdir",
+                            success:function (d) {
+                                if(d.success){
+                                    if(d.data.length){
+                                        var li = doT.template($("#liTemplate").html());
+                                        if(filePath.length>1){
+                                            d.data.unshift({name:"../",type:"back"});
+                                        }
+                                        $("#list").html(li(listSort(d.data)));
+                                    }else {
+                                        $("#list").html("<li>empty</li>");
+                                    }
+                                }else {
+                                    console.log(d);
+                                }
+                            }
+                        });
+                    }
+                }
+                if(type==="image"){
+                    if(file.files[0]){
+                        var data = new FormData();
+                        data.append('file',file.files[0]);
+                        data.append('path',dataPath);
+                        $.ajax({
+                            url:'./updata',
+                            type:'POST',
+                            data:data,
+                            contentType:false,
+                            processData: false,
+                            success:function (d) {
+                                if(d.success){
+                                    if(d.data.length){
+                                        var li = doT.template($("#liTemplate").html());
+                                        if(filePath.length>1){
+                                            d.data.unshift({name:"../",type:"back"});
+                                        }
+                                        $("#list").html(li(listSort(d.data)));
+                                    }else {
+                                        $("#list").html("<li>empty</li>");
+                                    }
+                                }else {
+                                    console.log(d);
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
+        $("#list").on("click",".jump",function () {
+           var val = $(this).html();
+           var type = $(this).data("type");
+           if(type === "dir"){
+               filePath.push(val);
+               showPath(filePath);
+               var dataPath = "";
+               if(filePath.length>1) {
+                   for(var i=0;i<filePath.length;i++){
+                       dataPath += (filePath[i] + '\\');
+                   }
+               }
+               dataPath = dataPath.slice(0,dataPath.length-1);
+               showFile(dataPath);
+           }
+           if(type === "back"){
+               filePath.pop();
+               showPath(filePath);
+               var dataPath = "";
+               if(filePath.length>1) {
+                   for(var i=0;i<filePath.length;i++){
+                       dataPath += (filePath[i] + '\\');
+                   }
+               }
+               dataPath = dataPath.slice(0,dataPath.length-1);
+               showFile(dataPath);
+           }
+        });
+    });
+</script>
+</body>
+</html>

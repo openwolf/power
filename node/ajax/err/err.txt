@@ -1,0 +1,170 @@
+2018-6-7 22:02:22
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:24
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:31
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:31
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 23:59:11
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\2.html'
+2018-6-8 00:06:24
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-8 00:06:27
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-8 22:36:02
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-13 14:24:12
+Error: ENOENT: no such file or directory, open 'D:\learning\node\html\index.html'
+2018-6-13 15:27:49
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\index.html'
+2018-6-13 15:38:23
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\html\1.html'
+2018-6-13 15:39:20
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\html\1.html'
+2018-6-13 15:39:37
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\html\1.html'
+2018-6-13 15:39:51
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 15:45:29
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 15:45:29
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 15:45:29
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 15:45:29
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 15:45:33
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\1.js'
+2018-6-13 17:51:14
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\js\jquery-3.3.1.min.js'
+2018-6-13 17:51:35
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\js\js\jquery-3.3.1.min.js'
+2018-6-13 18:05:49
+Error: ENOENT: no such file or directory, open 'D:\learning\node\ajax\htmlajax.html'
+2018-6-13 22:16:13
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajaxjquery-3.3.1.min.js'
+2018-6-13 22:17:48
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajax\img_0.jpg'
+2018-6-15 23:19:48
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajax\favicon.ico'
+2018-6-18 18:56:05
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\uploadundefined\undefined'
+2018-6-18 18:56:29
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\uploadundefined\undefined'
+2018-6-18 18:56:40
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\uploadundefined\undefined'
+2018-6-18 18:57:25
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\upload\undefined\undefined'
+2018-6-18 18:57:49
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\upload\undefined\undefined'
+2018-6-18 18:58:12
+Error: ENOENT: no such file or directory, mkdir 'D:\learn\node_learning\ajax\upload\undefined\undefined'
+2018-6-18 19:36:24
+Error: EEXIST: file already exists, mkdir 'D:\learn\node_learning\ajax\upload\aaa'
+2018-6-18 19:47:20
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajaxD:\learn\node_learning\ajax\upload'
+2018-6-18 19:48:19
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajaxD:\learn\node_learning\ajax\upload'
+2018-6-18 19:48:55
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\ajaxD:\learn\node_learning\ajax\upload'
+2018-6-18 19:49:31
+Error: EISDIR: illegal operation on a directory, read
+2018-6-18 19:49:59
+Error: EISDIR: illegal operation on a directory, read
+2018-6-19 14:38:39
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\uploadbbb\bbb'
+2018-6-22 14:08:12
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:08:15
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:08:16
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:08:16
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:08:16
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:08:16
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:09:38
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:12:07
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:14:07
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:35:04
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:38:41
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'
+2018-6-22 14:40:41
+Error: ENOENT: no such file or directory, scandir 'D:\learning\node\ajax\upload\2222'

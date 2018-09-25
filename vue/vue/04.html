@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue04</title>
+	<style type="text/css">
+	table{
+		border-spacing:0;
+		border-left: 1px solid #000;
+		border-top: 1px solid #000;
+	}
+	td{
+		border-right: 1px solid #000;
+		border-bottom: 1px solid #000;
+	}
+	#div_a{
+		overflow: hidden;
+	}
+	#div_a ul{
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="tempname = 'component-a'" >component-a</button>
+		<button v-on:click="tempname = 'component-b'" >component-b</button>
+		<keep-alive>
+			<div v-bind:is='tempname' ></div>
+		</keep-alive>
+		<table>
+			<tr is="componentC" v-for="item in list" v-bind:data="item" ></tr>
+		</table>
+	</div>
+	<h1>通过 Prop 向子组件传递数据</h1>
+	<script type="text/javascript" src="./vue.js" ></script>
+	<script type="text/javascript">
+var app = new Vue({
+	el:'#app',
+	data:{
+		tempname:'component-a',
+		list:[
+			{'a_0':'0_0','b_0':'1_0','c_0':'2_0'},
+			{'a_1':'0_1','b_1':'1_1','c_1':'2_1'},
+			{'a_2':'0_2','b_2':'1_2','c_2':'2_2'},
+			{'a_3':'0_3','b_3':'1_3','c_3':'2_3'}
+		]
+	},
+	components:{
+		'component-a':{
+			data:function(){
+				return{
+					num:0,
+					title:['标题一','标题二','标题三'],
+					content:[
+						'标题一的内容,标题一的内容,标题一的内容,标题一的内容',
+						'标题二的内容,标题二的内容,标题二的内容,标题二的内容',
+						'标题三的内容,标题三的内容,标题三的内容,标题三的内容'
+					]
+				};
+			},
+			methods:{
+				change:function(i){
+					console.log(i);
+					console.log(this);
+					this.num = i;
+				}
+			},
+			template:'\
+			<div id="div_a" >\
+				<ul>\
+					<li v-for="(v,i) in title" v-on:click="num = i">{{v}},{{i}}</li>\
+				</ul>\
+				<div>\
+					{{content[num]}}\
+				</div>\
+			</div>'
+		},
+		'component-b':{
+			template:'<h1>这里面没啥 这里是 component-b</h1>'
+		},
+		'componentC':{
+			props:['data'],
+			template:'<tr>\
+			<td v-for="(k,v,i) in data" >key:{{k}},val:{{v}},index:{{i}}</td>\
+			</tr>'
+		}
+	}
+});
+console.dir(app);
+	</script>
+</body>
+</html>

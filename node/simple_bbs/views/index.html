@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的留言版</title>
+    <link rel="stylesheet" href="../public/reset.css">
+    <style>
+        html,body{
+            position: relative;
+            height: 100%;
+        }
+        .content{
+            box-sizing: border-box;
+            position: absolute;
+            background: antiquewhite;
+            width: 50%;
+            height: 100%;
+            right: 0;
+            padding: 20px 40px 40px;
+        }
+        #list{
+            height: 100%;
+            overflow: auto;
+        }
+        #list li{
+            position: relative;
+            transition: 0.3s;
+            transform: scale(0.98);
+            padding: 6px;
+            background: rgba(255,255,255,0.45);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #list li:hover{
+            transform: scale(1);
+            background: rgba(255,255,255,1);
+        }
+        #list .del{
+            position: absolute;
+            border: none;
+            background: none;
+            color: red;
+            transition: 0.3s;
+            transform: scale(0.8);
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            opacity: 0;
+        }
+        #list .del:hover{
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        #list p{
+            font-size: 24px;
+            line-height: 30px;
+        }
+        #list .txt{
+            padding: 0 10px;
+            color: #333;
+        }
+        #list .user{
+            padding-right: 10px;
+            font-size: 18px;
+            text-align: right;
+        }
+        #list .time{
+            color: #03a9f4;
+            padding-right: 10px;
+            font-size: 16px;
+            text-align: right;
+        }
+        .control{
+            box-sizing: border-box;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 0;
+            padding: 50px 20px;
+        }
+        #text{
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: 46px;
+            padding: 0 10px;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .send{
+            cursor: wait;
+        }
+        #send{
+            padding: 4px 10px;
+        }
+        #pageControl{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            height: 20px;
+            left: 40px;
+            right: 40px;
+            bottom: 10px;
+        }
+        #pageControl li{
+            padding: 0 6px;
+            line-height: 20px;
+            text-align: center;
+            color: #9E9E9E;
+        }
+        #pageControl .btn{
+            transition: 0.2s;
+            margin: 0 2px;
+            cursor: pointer;
+            border-radius: 2px;
+            background: rgba(255,255,255,0.6);
+        }
+        #pageControl .btn:hover{
+            background: rgba(255,255,255,1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul id="list" >
+            <!--<li>-->
+                <!--<p class="txt" >内容</p>-->
+                <!--<p class="user" >谁谁谁发的</p>-->
+                <!--<p class="time">2017-10-20</p>-->
+                <!--<button class="del">x</button>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<p class="txt" >内容</p>-->
+                <!--<p class="user" >谁谁谁发的</p>-->
+                <!--<p class="time">2017-10-20</p>-->
+            <!--</li>-->
+        </ul>
+        <ul id="pageControl">
+            <!--<li class="btn" >上一页</li>-->
+            <!--<li class="btn" >1</li>-->
+            <!--<li>...</li>-->
+            <!--<li class="btn" >1</li>-->
+            <!--<li>...</li>-->
+            <!--<li class="btn" >1</li>-->
+            <!--<li class="btn" >下一页</li>-->
+        </ul>
+    </div>
+    <div class="control">
+        <input type="text" id="text" placeholder="输入内容" >
+        <button id="send" >send!</button>
+    </div>
+    <script src="../public/jquery-3.3.1.min.js" ></script>
+    <script src="../public/doT.min.js" ></script>
+    <script>
+        var app = {
+            templatLi:null,
+            init:function () {
+                this.templatLi = doT.template($('#template_li').text());
+                this.bind();
+                this.getData();
+            },
+            bind:function () {
+                $('#send').on('click',function () {
+                    var This = this;
+                    if(!$(This).hasClass('send')){
+                        var val = $('#text').val().trim();
+                        if(val){
+                            $(This).addClass('send');
+                            $.ajax({
+                                url: '/api/sendMessage',
+                                type: 'POST',
+                                dataType: 'json',
+                                contentType: 'application/json',
+                                data:JSON.stringify({message:val}),
+                                success:function (d) {
+                                    //   清楚输入框内容
+                                    $('#text').val('');
+                                    $('#list').prepend(templatLi({
+                                        val:val,
+                                        name:'aaa',
+                                        time:'2017-10-20'
+                                    }));
+                                    $(This).removeClass('send');
+                                    console.log(d);
+                                }
+                            });
+                        }else {
+                            alert('输入内容');
+                        }
+                    }
+                });
+            },
+            getData:function (d) {
+                $.ajax({
+                    url:'/api/getMessage',
+                    dataType: 'json',
+                    method:'POST',
+                    contentType: "application/json",
+                    data:JSON.stringify({pageNum:0}),
+                    success:function (d) {
+                        console.log(d);
+                    }
+                });
+            }
+        };
+        $(function () {
+            app.init();
+        });
+    </script>
+    <script id="template_li" type="text/x-dot-template">
+        <li>
+            <p class="txt" >{{=it.val}}</p>
+            <p class="user" >{{=it.name}}</p>
+            <p class="time">{{=it.time}}</p>
+            <button class="del">x</button>
+        </li>
+    </script>
+</body>
+</html>

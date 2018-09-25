@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue02</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="showParm('aaa',$event)" >aaa</button>
+		<ul>
+			<li v-on:click="liClick" v-for="(v,k,i) in list" v-bind:key="i" >val:{{v}} - key:{{k}} - index:{{i}}</li>
+		</ul>
+		<ul>
+			<li v-on:click="liClick" v-for="(v,k,i) in object" v-bind:key="i" >val:{{v}} - key:{{k}} - index:{{i}}</li>
+		</ul>
+		<hr>
+		<a v-bind:href="link0">link0</a>
+		<a :href="link1">link1</a>
+		<hr>
+		<p>{{string}}</p>
+		<p>{{newString}}</p>
+		<input type="text" v-model="string" >
+	</div>
+	<h1>//	指令参数</h1>
+	<h1>//	计算属性和侦听器</h1>
+	<h1>//	Class 与 Style 绑定</h1>
+	<h1>//	条件渲染</h1>
+	<h1>//	列表渲染</h1>
+	<h1>//	内联处理器中的方法</h1>
+	<h1>//	表单输入绑定</h1>
+	<script type="text/javascript" src="./vue.js" ></script>
+	<script type="text/javascript">
+var app = new Vue({
+	el:'#app',
+	data:{
+		link0:'http://taobao.com',
+		link1:'https://zhihu.com',
+		string:'',
+		list:[
+			// {val:'第一项'},
+			// {val:'第二项'},
+			// {val:'第三项'},
+			// {val:'第四项'},
+			// {val:'第五项'},
+			// {val:'第六项'},
+			'第一项','第二项','第三项','第四项','第五项','第六项'
+		],
+		object:{
+			a:'a',
+			b:'b',
+			c:'c',
+			d:'d',
+			e:'e'
+		}
+	},
+	methods:{
+		liClick:function(e){
+			console.log(e);
+		},
+		showParm:function(message,event){
+			console.log('message',message);
+			console.log('event',event);
+		}
+	},
+	computed:{
+		newString:function(){
+			return 'computed:' + this.string;
+		}
+	}
+});
+console.dir(app);
+	</script>
+</body>
+</html>

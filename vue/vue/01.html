@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue01</title>
+	<style type="text/css">
+		.box{
+			padding: 10px;
+			width: 400px;
+			border: 1px dashed #333;
+		}
+		.tab{
+			border: 1px solid #333;
+			border-right: none;
+			border-bottom: none;
+		}
+		.tab td{
+			border: 1px solid #333;
+			border-left: none;
+			border-top: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>{{newVal}}</p>
+		<p v-bind:id='elId' ></p>
+<!-- 		<temp-table v-bind:items="listNew" ></temp-table>
+		<ul>
+			<temp-li v-for="item in listNew" v-bind:item="item" v-bind:key="item.id" ></temp-li>
+		</ul>
+		<p>旧</p>
+		<button v-on:click="show" >{{buttonVal}}</button>
+		<div class="box" v-show="flag" >
+			{{message}}
+			<br>
+			<span v-bind:title="title_val">
+				鼠标悬停几秒查看动态绑定的提示信息
+			</span>
+			<p v-if="seen" >现在你看到我了</p>
+			<ul>
+				<li v-for="item in list" >{{item.val}}</li>
+			</ul>
+			<p>{{messageVal}}</p>
+			<button v-on:click="reverseMessage" >逆转消息</button>
+			<p>{{modelVal}}</p>
+			<input type="text" v-model="modelVal">
+			<p-tag></p-tag>
+		</div> -->
+	</div>
+	<script type="text/javascript" src="./vue.js" ></script>
+	<script type="text/javascript">
+Vue.component('temp-table',{
+	props:['items'],
+	template:'<table class=\'tab\' ><tr v-for=\'item in items\' v-bind:key=\'item.id\' ><td>id</td><td>{{item.id}}</td><td>val</td><td>{{item.val}}</td></tr></table>'
+});
+Vue.component('temp-li',{
+	props:['item'],
+	template:'<li><span>id</span>{{item.id}}<span>val</span><span>{{item.val}}</span></li>'
+});
+Vue.component('p-tag',{
+	template:'<p>这是p-tag组件</p>'
+});
+var app = new Vue({
+	el:'#app',
+	data:{
+		flag:false,
+		buttonVal:'显示',
+		messageVal:'这是一条正序的消息',
+		seen:true,
+		message:'Hello Vue!',
+		title_val:'页面加载于' + new Date().toLocaleString(),
+		list:[
+			{val:'aaa'},
+			{val:'bbb'},
+			{val:'ccc'},
+			{val:'ddd'},
+			{val:'eee'},
+			{val:'fff'}
+		],
+		modelVal:'测试数据',
+		listNew:[
+			{id:0,val:'第一个tr'},
+			{id:1,val:'第二个tr'},
+			{id:2,val:'第三个tr'},
+			{id:3,val:'第四个tr'},
+			{id:4,val:'第五个tr'},
+			{id:5,val:'第六个tr'},
+			{id:6,val:'第七个tr'},
+			{id:7,val:'第八个tr'},
+		],
+		newVal:0,
+		elId:'aa'
+	},
+	methods:{
+		reverseMessage:function(){
+			this.messageVal = this.messageVal.split('').reverse().join('');
+		},
+		show:function(){
+			if(this.flag){
+				this.flag = false;
+				this.buttonVal = '显示';
+			}else{
+				this.flag=true;
+				this.buttonVal = '隐藏';
+			}
+		}
+	},
+	beforeUpdate: function() {
+		console.group('beforeUpdate 更新前状态===============》');
+		console.log('%c%s', 'color:red', 'el     : ' + this.$el.innerHTML);
+		console.log(this.$el);
+		console.log('%c%s', 'color:red', 'data   : ' + JSON.stringify(this.$data));
+		console.log('%c%s', 'color:red', 'message: ' + this.message);
+		console.groupEnd();
+	},
+	updated: function() {
+		console.group('updated 更新完成状态===============》');
+		console.log('%c%s', 'color:red', 'el     : ' + this.$el.innerHTML);
+		console.log(this.$el);
+		console.log('%c%s', 'color:red', 'data   : ' + JSON.stringify(this.$data));
+		console.log('%c%s', 'color:red', 'message: ' + this.message);
+		console.groupEnd();
+	},
+});
+console.dir(app);
+	</script>
+</body>
+</html>

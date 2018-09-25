@@ -1,0 +1,76 @@
+2018-6-7 22:02:22
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:24
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:25
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:26
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:28
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:29
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:30
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:31
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:31
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 22:02:32
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-7 23:59:11
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\2.html'
+2018-6-8 00:06:24
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-8 00:06:27
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'
+2018-6-8 22:36:02
+Error: ENOENT: no such file or directory, open 'D:\learn\node_learning\static\123.html'

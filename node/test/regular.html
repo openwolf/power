@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="d"></div>
+<script>
+    "use strict";
+    // Function.prototype._before = function(fn){
+    // 	var __self = this;
+    // 	console.log(__self);
+    // 	return function(){
+    // 		fn.apply(this,arguments);
+    // 		return __self.apply(this,arguments);
+    // 	};
+    // };
+    // function a(){
+    // 	console.log('I\'m a');
+    // }
+    // a = a._before(function(){
+    // 	console.log('before');
+    // });
+    // a();
+    // document.getElementById = document.getElementById._before(function(){
+    // 	console.log('get');
+    // });
+    // console.log(document.getElementById("d"));
+
+    // var show = function(objName,obj,property){
+    // 	var list = ['url','img'];
+    // 	if(property){
+    // 		list.push(property);
+    // 	}
+    // 	for(var i=0;i<list.length;i++){
+    // 		console.log(objName,obj[list[i]]);
+    // 	}
+    // 	console.log('---------------------------------------------');
+    // }
+
+    // //	默认配置
+    // var config_0 = {
+    // 	url:'https://bing.com',
+    // 	img:'https://taobao.com'
+    // }
+    // show('config_0',config_0);
+
+    // //	当前页面配置
+    // var config_1 = Object.create(config_0);
+    // config_1.img = 'https://zhihu.com';
+
+    // //	不同分享方法配置
+    // show('config_1',config_1);
+    // var config_1_0 = Object.create(config_1);
+    // config_1_0.success = function(){
+    // 	console.log(1);
+    // }
+    // show('config_1_0',config_1_0,'success');
+
+    // var config_1_1 = Object.create(config_1);
+    // config_1_1.success = function(){
+    // 	console.log(2);
+    // }
+    // show('config_1_1',config_1_1,'success');
+    // show('config_0',config_0);
+
+    // var a = function(str){
+    // 	var reg = /[^\+-（）【】~_…“”＝A-Za-z\d\u4e00-\u9fa5]/g;
+    // 	return str.replace(reg,'0');
+    // }
+
+    var plus =function(a,b){
+        return Number(a) + Number(b);
+    }
+    var minus = function(a,b){
+        return Number(a) - Number(b);
+    }
+    var multiply = function(a,b){
+        return Number(a) * Number(b);
+    }
+    var divide = function(a,b){
+        return Number(a) / Number(b);
+    }
+
+    var n = '3+((1+10)-6)*2';
+    // var n = '1+2';
+    var m = '4-5';
+    // /\(-?\d+\.?\d*[\*/]-?\d+\.?\d*\)/
+    // console.log(/\(-?\d+\.?\d*[\*/]-?\d+\.?\d*\)/.test(n));
+    // console.log(n.split(/(\(-?\d+\.?\d*[\*/]-?\d+\.?\d*\))/));
+    // console.log(
+    // 	n.split(/(\(\d([\+\-*/]\d)+\))/)
+    // );
+
+    // console.log(/(-?\d+\.?\d*)([\+-])(\d+\.?\d*)/.exec(m));
+
+    function input(val){
+        // console.log('input',val);
+        var v = val.replace(/\s/g,'');
+        if(/\(-?\d+\.?\d*[\*/\+\-]-?\d+\.?\d*\)/.test(v)){
+            return hasBracket(v);
+        }else{
+            return noBracket(v);
+        }
+    }
+    console.log(input(n));
+
+    function noBracket(val){
+        console.log('noBracket',val);
+        var arr,
+            reg0 = /(-?\d+\.?\d*[\*/]-?\d+\.?\d*)/,
+            reg1 = /(-?\d+\.?\d*[\+-]-?\d+\.?\d*)/;
+        if(!isNaN(val)){
+            return val;
+        }
+        var step0 = reg0.exec(val);
+        // console.log('step0',step0);
+        if(step0&&step0.index>=0){
+            arr = val.split(reg0);
+            console.log(arr);
+            for(var i=0;i<arr.length;i++){
+                if(arr[i].length&&i===1){
+                    var result = /(-?\d+\.?\d*)([*/])(\d+\.?\d*)/.exec(arr[i]);
+                    if(result[2]==='*'){
+                        arr[i] = multiply.call(null,result[1],result[3]);
+                    }
+                    if(result[2]==='/'){
+                        arr[i] = divide.call(null,result[1],result[3]);
+                    }
+                }
+            }
+        }else{
+            var step1 = reg1.exec(val);
+            // console.log('step1',step1);
+            if(step1&&step1.index===0){
+                arr = val.split(reg1);
+                console.log(arr);
+                for(var i=0;i<arr.length;i++){
+                    if(arr[i].length&&i===1){
+                        var result = /(-?\d+\.?\d*)([\+-])(\d+\.?\d*)/.exec(arr[i]);
+                        if(result[2]==='+'){
+                            arr[i] = plus.call(null,result[1],result[3]);
+                        }
+                        if(result[2]==='-'){
+                            arr[i] = minus.call(null,result[1],result[3]);
+                        }
+                    }
+                }
+            }
+        }
+        arr = arr.join('');
+        return noBracket(arr);
+    }
+    function hasBracket(val){
+        console.log('hasBracket',val);
+        var arr = val.split(/(\(-?\d+\.?\d*[\*/\+\-]-?\d+\.?\d*\))/);
+        for(var i=0;i<arr.length;i++){
+            //	判断是否被括号包围
+            if(/^\(.+\)$/.test(arr[i])){
+                arr[i] = noBracket(arr[i].slice(1,arr[i].length-1));
+                // console.log(arr[i]);
+            }
+        }
+        arr = arr.join('');
+        input(arr);
+    }
+</script>
+</body>
+</html>

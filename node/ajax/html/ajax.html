@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+    <ul id="list" >
+        <li><input type="text" name="val_0" class="form" ></li>
+    </ul>
+    <br>
+    <button id="add" >+</button>
+    <button id="send" >send</button>
+    <br>
+    <div id="result" ></div>
+    <hr>
+    <input type="file" id="file" >
+    <button id="upload" >upload</button>
+    <script src="./../js/jquery-3.3.1.min.js" ></script>
+    <script>
+        $(function () {
+            var i = 1;
+            var file = document.getElementById('file');
+            $('#add').on('click',function () {
+                var str = '<li><input type="text" name="val_'+i+'" class="form" ></li>';
+                i+=1;
+                $('#list').append(str);
+            });
+            $('#send').on('click',function () {
+                var data = {};
+                $('.form').each(function (i,v) {
+                    var k = $(this).attr('name');
+                    var v = $(this).val();
+                    data[k] = v;
+                })
+                $.ajax({
+                    url:'./ajax',
+                    type:'POST',
+                    data:data,
+                    dataType:'json',
+                    success:function (d) {
+                        console.log('ok');
+                        console.log(d);
+                    }
+                });
+            });
+            $('#upload').on('click',function () {
+                if(file.files[0]){
+                    var data = new FormData();
+                    data.append('file',file.files[0]);
+                    $.ajax({
+                        url:'./updata',
+                        type:'POST',
+                        data:data,
+                        contentType:false,
+                        processData: false,
+                        success:function (d) {
+                            console.log('ok');
+                            console.log(d);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

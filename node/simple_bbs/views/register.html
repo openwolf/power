@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../public/reset.css">
+    <style>
+        body{
+            padding: 10px;
+        }
+        label{
+            display: block;
+            font-size: 16px;
+            margin: 4px 6px;
+        }
+        label input{
+            margin: 0 6px;
+            height: 20px;
+            line-height: 20px;
+        }
+        button{
+            padding: 4px 20px;
+            display: block;
+            margin: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<label>用户名:<input type="text" placeholder="请输入用户吗" id="accounts" ></label>
+<label>密码:<input type="password" placeholder="请输入密码" id="password" ></label>
+<button id="regist" >注册</button>
+<button id="reset" >重置</button>
+<script src="../public/jquery-3.3.1.min.js" ></script>
+<script src="../public/md5.min.js" ></script>
+<script>
+    var app  ={
+        init:function () {
+            this.bind();
+        },
+        bind:function () {
+            var $accounts = $('#accounts');
+            var $password = $('#password');
+            var require = false;
+            $('#regist').on('click',function () {
+                if(!require){
+                    var accounts = $accounts.val().trim();
+                    var password = $password.val().trim();
+                    if(accounts&&password){
+                        password = md5(password);
+                        console.log(password);
+                        require = true;
+                        $.ajax({
+                            method:'post',
+                            url:'/api/register',
+                            contentType: "application/json",
+                            data:JSON.stringify({
+                                accounts:accounts,
+                                password:password,
+                            }),
+                            success:function (d) {
+                                require = false;
+                                console.log(d);
+                            }
+                        })
+                    }
+                }
+            });
+            $('#reset').on('click',function () {
+                $accounts.val('');
+                $password.val('');
+            });
+        }
+    };
+    $(function () {
+        app.init();
+    })
+</script>
+</body>
+</html>
