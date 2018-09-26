@@ -31,14 +31,14 @@ App({
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow: function (options) {
-    
+    console.log(options);
   },
 
   /**
    * 当小程序从前台进入后台，会触发 onHide
    */
   onHide: function () {
-    
+    console.log('onHide');
   },
 
   /**

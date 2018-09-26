@@ -11,35 +11,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(this.route);
+    console.log('onLoad',options)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    console.log('onReady');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log('监听页面显示');
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    console.log('监听页面隐藏');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.log('监听页面卸载');
   },
 
   /**
@@ -59,7 +60,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function (info) {
+    console.log(info);
+    console.log('用户点击右上角分享');
+  },
+  eventBtnA(){
+    console.log('点击事件');
   }
 })
