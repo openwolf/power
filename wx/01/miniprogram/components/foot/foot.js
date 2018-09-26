@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    list:{
+      type:Array,
+      value:['这是地址','这是邮箱','这是联系方式','等等等等的信息']
+    }
   },
 
   /**

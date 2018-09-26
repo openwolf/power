@@ -1,2 +1,5 @@
 <!--components/foot/foot.wxml-->
+<view class='foot' >
+  <view class='foot-item' wx:for='list' wx:key='index' >{{item}}</view>
+</view>
 <text>components/foot/foot.wxml</text>
