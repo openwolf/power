@@ -9,8 +9,14 @@ Page({
     takeSession: false,
     requestResult: ''
   },
-
   onLoad: function() {
+    console.log('我是index');
+    app.globalData.p.then((s)=>{
+      console.log('index',s);
+    });
+    app.globalData.c.catch((s) => {
+      console.log('index', s);
+    });
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

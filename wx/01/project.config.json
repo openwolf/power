@@ -6,11 +6,12 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true
 	},
 	"appid": "wx9107cb81041e13a0",
 	"projectname": "01",
-	"libVersion": "2.2.5",
+	"libVersion": "2.3.0",
 	"condition": {
 		"search": {
 			"current": -1,
