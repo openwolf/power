@@ -13,18 +13,18 @@ App({
         traceUser: true,
       })
     }
-
+    wx.authorize({ scope: "scope.userLocation" })
     this.globalData = {};
-    this.globalData.p = new Promise((res, rej) => {
-      setTimeout(() => {
-        res('ok');
-      }, 5000);
-    });
-    this.globalData.c = new Promise((res, rej) => {
-      setTimeout(() => {
-        rej('no');
-      }, 5000);
-    });
+    // this.globalData.p = new Promise((res, rej) => {
+    //   setTimeout(() => {
+    //     res('ok');
+    //   }, 5000);
+    // });
+    // this.globalData.c = new Promise((res, rej) => {
+    //   setTimeout(() => {
+    //     rej('no');
+    //   }, 5000);
+    // });
   },
 
   /**

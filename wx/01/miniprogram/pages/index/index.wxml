@@ -47,4 +47,11 @@
     </navigator>
   </view>
 
+  <!-- 去新页面 -->
+  <view class="uploader">
+    <view open-type="openSetting" class="uploader-text" bindtap='openWindow' >
+      <text>测试按钮</text>
+    </view>
+  </view>
+
 </view>

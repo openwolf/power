@@ -1,5 +1,9 @@
 <view>
-<view wx:for="{{[1,2,3,4,5,6]}}" wx:key="index" >{{item}}</view>
-<button open-type='share' >转发一下？</button>
-<button bindtap='eventBtnA' >按钮a</button>
+<view class='body' >
+这里面是父级的内容
+<button bindtap='addItem' >往子组件中插值</button>
+</view>
+<foot list='{{items}}' my-class="text-color" bindfootEvent="footEvent" >
+<view>这是slot插入的内容</view>
+</foot>
 </view>
