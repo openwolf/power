@@ -1,1 +1,16 @@
 /* components/foot/foot.wxss */
+.name{
+  display: block;
+  color: red;
+  text-align: center;
+}
+.foot{
+  margin-bottom: 40rpx;
+}
+.foot-item{
+  line-height: 90rpx;
+  display: block;
+  text-align: center;
+  border-bottom: 1rpx solid black;
+  margin-bottom: 10rpx;
+}

@@ -1,5 +1,10 @@
 <!--components/foot/foot.wxml-->
-<view class='foot' >
-  <view class='foot-item' wx:for='list' wx:key='index' >{{item}}</view>
+<view class='foot my-class' >
+  <view class='foot-item' wx:for='{{list}}' wx:key='index' >{{item}} + {{index}}</view>
 </view>
-<text>components/foot/foot.wxml</text>
+<slot></slot>
+<text class='name' >components/foot/foot.wxml</text>
+<view>
+<view>组件data</view>
+<view wx:for='{{arr}}' wx:key='index' bindtap='itemTap' >{{item}}</view>
+</view>

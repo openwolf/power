@@ -11,12 +11,12 @@ Page({
   },
   onLoad: function() {
     console.log('我是index');
-    app.globalData.p.then((s)=>{
-      console.log('index',s);
-    });
-    app.globalData.c.catch((s) => {
-      console.log('index', s);
-    });
+    // app.globalData.p.then((s)=>{
+    //   console.log('index',s);
+    // });
+    // app.globalData.c.catch((s) => {
+    //   console.log('index', s);
+    // });
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -27,10 +27,12 @@ Page({
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log('getSetting',res);
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log('getUserInfo',res);
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo
@@ -122,5 +124,18 @@ Page({
       }
     })
   },
-
+  //  测试
+  openWindow:function(){
+    wx.openSetting({
+      success: (res) => {
+        console.log('openSetting success', res);
+      },
+      fail: (res) => {
+        console.log('openSetting fail', res);
+      },
+      complete: (res) => {
+        console.log('openSetting complete', res);
+      }
+    });
+  }
 })

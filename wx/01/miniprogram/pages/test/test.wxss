@@ -1,1 +1,9 @@
 /* pages/empty/empty.wxss */
+.body{
+  padding: 20rpx;
+  background:rgba(153, 102, 255,0.1);
+  text-align: center;
+}
+.text-color{
+  color: #8a8a8a;
+}
