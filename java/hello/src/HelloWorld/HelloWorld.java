@@ -8,7 +8,7 @@ public class HelloWorld {
 		int a = 99;
 		while(a>=0){
 			System.out.println(a);
-			a += 1;
+			a -= 1;
 		}
 	}
 
