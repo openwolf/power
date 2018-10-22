@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue04</title>
+	<style type="text/css">
+	table{
+		border-spacing:0;
+		border-left: 1px solid #000;
+		border-top: 1px solid #000;
+	}
+	td{
+		border-right: 1px solid #000;
+		border-bottom: 1px solid #000;
+	}
+	#div_a{
+		overflow: hidden;
+	}
+	#div_a ul{
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click="open" >开</button>
+		<button @click="close" >关</button>
+		<component-a :list="arr" :n="n" v-show="flag" ref="a" ></component-a>
+		<!-- <component-a :list="arr" :n="n" v-if="flag" ref="a" ></component-a> -->
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+var app = new Vue({
+	el:'#app',
+	data:{
+		arr:'props过来的值',
+		flag:false,
+		n:0,
+	},
+	methods:{
+		open(){
+			this.n+=1;
+			this.flag = true;
+			this.$refs.a.fn0();
+		},
+		close(){
+			this.flag = false;	
+		}
+	},
+	components:{
+		'component-a':{
+			props:['list','n'],
+			data:function(){
+				return{
+					val:'123',
+				};
+			},
+			watch:{
+				n(){
+					alert('watch');
+				},
+			},
+			methods:{
+				fn0(){
+					alert('method');
+				}
+			},
+			template:`
+				<div>
+					{{list + n}}
+				</div>
+			`
+		},
+	}
+});
+	</script>
+</body>
+</html>
