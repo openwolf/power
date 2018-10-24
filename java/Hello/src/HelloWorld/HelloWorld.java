@@ -13,7 +13,10 @@ public class HelloWorld {
 //		int a = 8;
 //		byte b = a / 4;
 //		System.out.println(b);
-		
+//		int a = 5;
+//		int b = a + c;
+//		int c =1;
+//		System.out.println(b);
 	}
 
 }
