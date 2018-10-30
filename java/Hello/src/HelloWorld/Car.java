@@ -5,4 +5,8 @@ public class Car {
 	String color;
 	String name;
 	String direction;
+	public void driveCar() {
+		speed = 50;
+		direction = "до╥╫";
+	}
 }
