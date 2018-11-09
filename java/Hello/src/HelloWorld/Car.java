@@ -9,4 +9,13 @@ public class Car {
 		speed = 50;
 		direction = "南方";
 	}
+	public Car() {
+		this("黄色","马自达","自由",10);
+	}
+	public Car(String color,String name,String direction,int speed) {
+		this.speed = speed;
+		this.color = color;
+		this.name = name;
+		this.direction = direction;
+	}
 }
