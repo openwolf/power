@@ -17,16 +17,11 @@ public class HelloWorld {
 //		int b = a + c;
 //		int c =1;
 //		System.out.println(b);
-		byte a = 5;
-		if(a>0) {
-			System.out.println("a > 0");
-		}else if(a>1) {
-			System.out.println("a > 1");
-		}else if(a>2) {
-			System.out.println("a > 2");
-		}else {
-			System.out.println("a <= 0");
-		}
+		int[] a = {7,8,9};
+		int[] b = a.clone();
+		b[1] = 2;
+		System.out.println("a"+a[1]);
+		System.out.println("b.length:"+b.length);
 	}
 
 }
