@@ -41,7 +41,17 @@ public class HelloWorld {
 //		int [] arr_2 = arr_0;
 //		System.out.println("arr_0 == arr_1:" + (arr_0==arr_1));
 //		System.out.println("arr_0 == arr_2:" + (arr_0==arr_2));
+//		String a = "ABCDEFG";
+//		char target_0 = 'D';
+//		String target_1 = "EF";
+//		int n = a.indexOf(target_0);
+//		int m = a.indexOf(target_1);
+//		System.out.println("n:" + n);
+//		System.out.println("m:" + m);
 		
+		String str = "ABCDE";
+		String str1 = str.replace('C', 'c');
+		System.out.println(str1);
 	}
 
 }
