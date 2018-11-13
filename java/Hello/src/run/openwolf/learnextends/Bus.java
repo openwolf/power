@@ -39,5 +39,11 @@ public class Bus extends CarBase {
 			return false;
 		}
 	}
-	
+	public Bus() {
+		System.out.println("Bus构造函数被调用了");
+	}
+	public Bus(int speed, String name, String color) {
+		super(speed,name,color);
+		System.out.println("Bus构造函数被调用了");
+	}
 }

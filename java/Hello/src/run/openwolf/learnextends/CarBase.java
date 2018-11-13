@@ -24,4 +24,14 @@ public class CarBase {
 			}
 		}
 	}
+	
+	public CarBase() {
+		System.out.println("Car构造函数被调用了");
+	}
+	public CarBase(int speed, String name, String color) {
+		System.out.println("Car构造函数被调用了");
+		this.speed = speed;
+		this.name = name;
+		this.color = color;
+	}
 }
