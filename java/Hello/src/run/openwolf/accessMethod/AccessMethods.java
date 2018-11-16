@@ -32,4 +32,9 @@ public class AccessMethods {
 	private void privateMethod() {
 		this.showMeg("privateMethod");
 	}
+	public static void main(String[] args) {
+		AccessMethods methods = new AccessMethods();
+		methods.privateMethod();
+		methods.defaultMethod();
+	}
 }
