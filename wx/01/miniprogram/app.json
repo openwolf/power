@@ -1,6 +1,7 @@
 {
   "cloud": true,
   "pages": [
+    "pages/testMargin/test",
     "pages/index/index",
     "pages/test/test",
     "pages/userConsole/userConsole",
