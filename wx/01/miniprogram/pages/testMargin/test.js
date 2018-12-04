@@ -62,5 +62,11 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    aBtn(){
+        console.log('aaaaa');
+    },
+    bBtn(){
+        console.log('bbbbb');
     }
 })

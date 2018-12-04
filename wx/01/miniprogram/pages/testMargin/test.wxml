@@ -1,2 +1,9 @@
-<!--pages/testMargin/test.wxml-->
-<text>pages/testMargin/test.wxml</text>
+<alert>
+    <view slot='text' class='text' >
+        这是一段文本这是一段文本这是一段文本这是一段文本这是一段文本这是一段文本这是一段文本这是一段文本
+    </view>
+    <view slot='btn' class='btn_group' >
+        <view catchtap='aBtn' >a</view>
+        <view catchtap='bBtn' >b</view>
+    </view>
+</alert>

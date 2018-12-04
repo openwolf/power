@@ -1,0 +1,5 @@
+<!--components/alert/alert.wxml-->
+<view class='bg' >
+    <slot name='text' ></slot>
+    <slot name="btn"></slot>
+</view>
