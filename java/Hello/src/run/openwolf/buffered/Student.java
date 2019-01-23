@@ -1,15 +1,15 @@
-package run.openwolf.manageStudent;
+package run.openwolf.buffered;
 
 public class Student {
-	// 学号
+	//	学号
 	private String num;
-	// 姓名
+	//	姓名
 	private String name;
-	// 年龄
+	//	年龄
 	private String age;
-	// 家乡
+	//	家乡
 	private String hometown;
-
+	
 	public Student() {
 	}
 
@@ -56,5 +56,4 @@ public class Student {
 		String val = this.num + "," + this.name + "," + this.age + "," + this.hometown;
 		return val;
 	}
-
 }
