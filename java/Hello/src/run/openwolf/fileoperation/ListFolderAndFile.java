@@ -9,11 +9,11 @@ public class ListFolderAndFile {
 		String folderPath = "e:" + File.separator;
 		File folder = new File(folderPath);
 		if (!folder.exists()) {
-//			System.out.println(folderPath + "涓嶆槸鏈夋晥鐨勮矾寰�!");
+//			System.out.println(folderPath + "不是有效的路径!");
 			return;
 		}
 		if (!folder.isDirectory()) {
-//			System.out.println(folderPath + "涓嶆槸鏈夋晥鐨勬枃浠跺す!");
+//			System.out.println(folderPath + "不是有效的文件夹!");
 			return;
 		}
 		File[] allFiles = folder.listFiles();
@@ -26,9 +26,9 @@ public class ListFolderAndFile {
 				folders.add(allFiles[i]);
 			}
 		}
-//		System.out.println("鏂囦欢澶筡"" + folderPath + "\"涓寘鍚涓嬫枃浠跺す");
+		System.out.println("文件夹\"" + folderPath + "\"中包含如下文件夹");
 		printPath(folders);
-//		System.out.println("鏂囦欢澶筡"" + folderPath + "\"涓寘鍚涓嬫枃浠�");
+		System.out.println("文件夹\"" + folderPath + "\"中包含如下文件");
 		printPath(files);
 	}
 

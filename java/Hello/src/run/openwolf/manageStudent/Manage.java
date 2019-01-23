@@ -1,12 +1,55 @@
 package run.openwolf.manageStudent;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import run.openwolf.buffered.Student;
+
 public class Manage {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ArrayList<Student> students = new ArrayList<Student>();
+		load("data.txt",students);
 		showMessage(students);
+	}
+	/**
+	 *	加载文件中的数据
+	 * @param fileName
+	 * @param array
+	 * @throws IOException
+	 */
+	public static void load(String fileName,ArrayList<Student> array) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String val;
+		while((val = br.readLine())!=null) {
+			String[] fields = val.split(",");
+			array.add(new Student(fields[0],fields[1],fields[2],fields[3]));
+		}
+		br.close();
+		
+		for(int i=0;i<array.size();i++) {
+			System.out.println(array.get(i).showInfo());
+		}
+	}
+	
+	/**
+	 *	写入数据
+	 * @param fileName
+	 * @param array
+	 * @throws IOException
+	 */
+	public static void WriterData(String fileName,ArrayList<Student> array) throws IOException {
+		BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+		for(int i=0;i<array.size();i++) {
+			bw.write(array.get(i).showInfo());
+			bw.newLine();
+			bw.flush();
+		}
+		bw.close();
 	}
 	/**
 	 *	按学号查询某个学生
@@ -105,8 +148,9 @@ public class Manage {
 	
 	/**
 	 * 主流程
+	 * @throws IOException 
 	 */
-	public static void showMessage(ArrayList<Student> list) {
+	public static void showMessage(ArrayList<Student> list) throws IOException {
 		while(true) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("-----欢迎来到学生管理系统，请选择-----");
@@ -130,9 +174,11 @@ public class Manage {
 					changeInfo(list);
 					break;
 				case "5":
+					WriterData("data.txt",list);
 					System.out.println("谢谢使用");
 					return;
 				default:
+					WriterData("data.txt",list);
 					System.out.println("输入选项有误，请重新输入");
 					break;
 			}
