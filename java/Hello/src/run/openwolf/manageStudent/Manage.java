@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import run.openwolf.buffered.Student;
 
 public class Manage {
 	public static void main(String[] args) throws IOException {
