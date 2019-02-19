@@ -9,5 +9,10 @@ Page({
     this.setData({
       openid: getApp().globalData.openid
     })
+
+      wx.setNavigationBarTitle({
+          title: '当前页面'
+      })
+
   }
 })

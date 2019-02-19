@@ -1,6 +1,7 @@
 {
   "cloud": true,
   "pages": [
+    "pages/user/list/index",  
     "pages/testMargin/test",
     "pages/index/index",
     "pages/test/test",
@@ -17,5 +18,10 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
-  }
+  },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    }
 }
