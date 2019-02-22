@@ -1,10 +1,9 @@
 {
   "cloud": true,
   "pages": [
-    "pages/user/list/index",  
-    "pages/testMargin/test",
     "pages/index/index",
     "pages/test/test",
+    "pages/testMargin/test",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
