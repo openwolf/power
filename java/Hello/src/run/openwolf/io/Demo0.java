@@ -1,4 +1,4 @@
-package run.openwolf.iodemo;
+package run.openwolf.io;
 
 import java.io.File;
 import java.util.Arrays;
