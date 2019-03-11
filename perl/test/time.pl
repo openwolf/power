@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 $time = time();
 print("$time\n");
 $time = localtime();

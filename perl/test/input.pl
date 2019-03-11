@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 while(1){
 	print("请输入点字符\n");
 	chomp($line = <STDIN>);

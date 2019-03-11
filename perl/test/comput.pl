@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 $key = "aaa:";
 $val0 = "bbb";
 $val1 = 15;

@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 $var0 = 1;
 $var1 = "aa";
 print("\$var0 = $var0 \n");

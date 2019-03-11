@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 @arr3 = (0...9);
 @arr4 = @arr3[4...6];
 print(@arr4);

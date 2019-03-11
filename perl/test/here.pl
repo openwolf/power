@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 $a = 10;
 $str = <<"EOF";
 这里开始写点文字，好像可以使用字符串和变量等等
