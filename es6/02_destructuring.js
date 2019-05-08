@@ -101,7 +101,7 @@ function add([x,y]) {
 
 // 2.从函数返回多个值
 function example0() {
-    return [1,2,3];
+	return [1,2,3];
 }
 let [a,b,c] = example0();
 console.log(a);
@@ -109,10 +109,10 @@ console.log(b);
 console.log(c);
 
 function  example1() {
-    return {
-        foo:1,
-        bar:2
-    }
+	return {
+		foo:1,
+		bar:2
+	};
 }
 let {foo,bar} = example1();
 console.log(foo);
