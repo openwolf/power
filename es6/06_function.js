@@ -85,24 +85,24 @@ let f0 = () => 5;
 console.log(f0());
 // 等同于
 let f1 = function () {
-    return 5;
-}
+	return 5;
+};
 // console.log(f1());
 
 let sum0 = (num1,num2) => num1 + num2;
 // console.log(sum0(1,2));
 // 等同于
 let sum1 = function (num1,num2) {
-    return num1 + num2;
-}
+	return num1 + num2;
+};
 // console.log(sum1(2,1));
 
 // 如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。
 
 let sum2 = (num1,num2) => {
-    console.log(`num1:${num1}`);
-    console.log(`num2:${num2}`);
-    return num1 + num2;
+	console.log(`num1:${num1}`);
+	console.log(`num2:${num2}`);
+	return num1 + num2;
 };
 // console.log(sum2(10,20));
 
