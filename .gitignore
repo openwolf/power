@@ -1,6 +1,6 @@
-electron/node_modules/
 node/.idea/
 node/node_modules/
 node/ajax/upload
 vue/node_modules/
+typescript/node_modules/
 .idea/
