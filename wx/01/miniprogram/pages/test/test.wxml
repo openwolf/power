@@ -1,9 +1,0 @@
-<view>
-<view class='body' >
-这里面是父级的内容
-<button bindtap='addItem' >往子组件中插值</button>
-</view>
-<foot list='{{items}}' my-class="text-color" bindfootEvent="footEvent" >
-<view>这是slot插入的内容</view>
-</foot>
-</view>
