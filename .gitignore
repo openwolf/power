@@ -4,3 +4,5 @@ node/ajax/upload
 vue/node_modules/
 ts/node_modules/
 .idea/
+parcel_ts/.cache
+parcel_ts/dist
