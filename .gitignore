@@ -2,5 +2,5 @@ node/.idea/
 node/node_modules/
 node/ajax/upload
 vue/node_modules/
-typescript/node_modules/
+ts/node_modules/
 .idea/
