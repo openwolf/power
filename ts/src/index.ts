@@ -1,1 +1,2 @@
-let num: number = 123;
+import './example/basic-type';
+console.log('hello world');
