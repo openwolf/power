@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Hello World!</title>
+  </head>
+  <body>
+	<h1>Hello World!</h1>
+	<!-- All of the Node.js APIs are available in this renderer process. -->
+	We are using Node.js <script>document.write(process.versions.node)</script>,
+	Chromium <script>document.write(process.versions.chrome)</script>,
+	and Electron <script>document.write(process.versions.electron)</script>.
+
+	<script>
+		require('electron-connect').client.create();
+
+		// You can also require other files to run in this process
+		// require('./renderer.js')
+		// 引入ipcRenderer
+		const ipcRenderer = require('electron').ipcRenderer
+
+		// 发送标识为asynchronous-message的消息'ping'
+		ipcRenderer.send('asynchronous-message', 'ping')
+		// 接收标识为asynchronous-reply的消息
+		ipcRenderer.on('asynchronous-reply', function (event, arg) {
+			console.log(arg)
+		});
+
+		
+		ipcRenderer.on('ping', function (event, arg) {
+			console.log(arg)
+		});
+
+	</script>
+  </body>
+</html>
