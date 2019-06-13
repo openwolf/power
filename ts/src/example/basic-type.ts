@@ -1,10 +1,10 @@
 //  布尔类型
 let bool: boolean = true;
-console.log('bool:',bool);
+console.log('bool:', bool);
 
 //  数值类型
 let num: number = 123;
-console.log('num:',num);
+console.log('num:', num);
 
 //  字符串类型
 let str: string = 'abc';
