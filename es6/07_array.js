@@ -1,3 +1,4 @@
+'use strict';
 // 1.扩展运算符
 // 扩展运算符是三个点(...)它好比rest参数的逆运算,将一个数组转为用逗号分隔的参数序列.
 // console.log(...[1,2,3]);
@@ -27,15 +28,63 @@
 // thisArg 在fun函数运行时指定的this值.
 // argsArray 一个数组或者类数组对象,其中的数组元素将作为单独的参数传给fun函数.
 
+// function a(a,...item) {
+// // function a(a) {
+// 	console.log(a);
+// 	console.log(item);
+// }
+// a.apply(null,[1,[2,3,4,5]]);
+
+// const a = [0,1,2,3,4,5,6,7,8,9];
+// let result;
+// result = a.some((v)=>{
+// 	console.log(v)
+// 	if(v>0){
+// 		return true;
+// 	}else {
+// 		return false;
+// 	}
+// });
+
+// result = a.every(((v)=>{
+// 	console.log(v)
+// 	if(v>0){
+// 		return true;
+// 	}else {
+// 		return false;
+// 	}
+// }));
+
+// result = a.filter((v)=>{
+// 	console.log(this);
+// 	if(v>5){
+// 		return true;
+// 	}else {
+// 		return false;
+// 	}
+// });
+
+// result = a.forEach((v)=>{
+// 	let result = v*2;
+// 	console.log(result)
+// 	return result;
+// });
+
+// result = a.map((v)=>{
+// 	return v*2;
+// });
+
+// console.log('a: ',a);
+// console.log('result: ',result);
 // 一个取代apply方法的实际的例子
 // es5 的写法
-console.log(Math.max.apply(null,[14,3,77]));
+// console.log(Math.max.apply(null,[14,3,77]));
 
 // es6 的写法
-console.log(Math.max(...[14,3,77]));
+// console.log(Math.max(...[14,3,77]));
 
 // 等同于
-console.log(Math.max(14,3,77));
+// console.log(Math.max(14,3,77));
 
 // 另一个例子是通过 push 函数,将一个数组添加到另一个数组的尾部.
 // es5 的写法
@@ -160,14 +209,14 @@ console.log(Math.max(14,3,77));
 
 // Array.of()
 // Array.of 方法用于将一组值,转换为数组.
-Array.of(3,11,8); // [3,11,8]
-Array.of(3); // [3]
-Array.of(3).length; // 1
+// Array.of(3,11,8); // [3,11,8]
+// Array.of(3); // [3]
+// Array.of(3).length; // 1
 
-Array.of(); // []
-Array.of(undefined); // [undefined]
-Array.of(1); // [1]
-Array.of(1,2); // [1,2]
+// Array.of(); // []
+// Array.of(undefined); // [undefined]
+// Array.of(1); // [1]
+// Array.of(1,2); // [1,2]
 
 // Array.of 总是返回参数值组成的数组.如果没有参数,就返回一个空数组
 
@@ -185,43 +234,43 @@ Array.of(1,2); // [1,2]
 // -start (可选):从该位置开始读取数据,默认为0,如果为负值,表示倒数.
 // -end (可选):到该位置前停止如果为负值,表示倒数.
 
-[1,2,3,4,5].copyWithin(0,3); // [4,5,3,4,5]
+// [1,2,3,4,5].copyWithin(0,3); // [4,5,3,4,5]
 
 // 数组实例的 find() 和 findIndex()
 // 数组实例的find方法,用于找出第一个符合条件的数组成员.它的参数是一个回调函数,
 // 所有数组成员依次执行该回调函数,直到找出第一个返回值为true的成员,然后返回该成员.
 // 如果没有符合条件的成员,则返回undefined
-[1,4,-5,10].find((n) => n < 0); // -5
+// [1,4,-5,10].find((n) => n < 0); // -5
 // 上面代码找出数组中第一个小于0的成员.
-[1,5,10,15].find(function (value,index,arr) {
-	return value > 9;
-});
+// [1,5,10,15].find(function (value,index,arr) {
+// 	return value > 9;
+// });
 // 10
 // 上面代码中,find方法的回调函数可以接受三个参数,依次为当前的值,当前的位置和原数组.
 // 数组实例的findIndex方法的用法与find方法非常类似,返回第一个符合条件的数组的成员的位置,
 // 如果所有成员都不符合条件,则返回-1.
 
-[1,5,10,15].findIndex(function (value,index,arr) {
-	return value > 9;
-});
+// [1,5,10,15].findIndex(function (value,index,arr) {
+// 	return value > 9;
+// });
 // 2
 // 这两个方法都可以接受第二个参数,用来绑定回调函数的this对象.
-function f(v) {
-	return v > this.age;
-}
-let person = { name:"John" , age:20 };
-[10,12,26,15].find(f,person); // 26
+// function f(v) {
+// 	return v > this.age;
+// }
+// let person = { name:"John" , age:20 };
+// [10,12,26,15].find(f,person); // 26
 // 上面的代码中,find函数接收了第二个参数person对象,回调函数中this对象指向person对象.
 // 另外,这两个方法都可以发现NaN,弥补了数组的indexOf方法的不足.
-[NaN].indexOf(NaN); // -1
-[NaN].findIndex( y => Object.is(NaN,y)); // 0
+// [NaN].indexOf(NaN); // -1
+// [NaN].findIndex( y => Object.is(NaN,y)); // 0
 // 上面代码中,indexOf方法无法识别数组的NaN成员.但是findIndex方法可以借助Object.is方法做到.
 
 // 数组实例的fill()
 // fill 方法使用给定值,填充一个数组.
-["a","b","c"].fill(7); // [7,7,7]
+// ["a","b","c"].fill(7); // [7,7,7]
 // fill 方法还可以接受第二个和第三个参数,用于指定填充的起始位置和结束位置.
-["a","b","c"].fill(7,1,2); // ["a",7,"c"]
+// ["a","b","c"].fill(7,1,2); // ["a",7,"c"]
 // 上面代码表示,fill方法从1号位开始,向原数组填充7,到2号位之前结束.
 
 // 数组实例的entries(),keys()和values()
@@ -229,48 +278,48 @@ let person = { name:"John" , age:20 };
 // 它们都返回一个遍历器对象,可以用for...of循环进行遍历,唯一的区别是keys()是对键名的遍历,
 // values()是对键值的遍历,entries()是对键值对的遍历.
 
-for(let index of ["a","b"].keys()){
-	console.log(index);
-}
+// for(let index of ["a","b"].keys()){
+// 	console.log(index);
+// }
 // 0
 // 1
 
-for(let elem of ["a","b"].values()){
-	console.log(elem);
-}
+// for(let elem of ["a","b"].values()){
+// 	console.log(elem);
+// }
 // "a"
 // "b"
 
-for(let [index,elem] of ["a","b"].entries()){
-	console.log(index,elem);
-}
+// for(let [index,elem] of ["a","b"].entries()){
+// 	console.log(index,elem);
+// }
 // 0 "a"
 // 1 "b"
 
 // 如果不使用for..of循环,可以手动调用遍历器对象的next方法,进行遍历.
-let  letter = ["a","b","c"];
-let entries = letter.entries();
-console.log(entries.next().value); // [0 , "a"]
-console.log(entries.next().value); // [1 , "b"]
-console.log(entries.next().value); // [2 , "c"]
+// let  letter = ["a","b","c"];
+// let entries = letter.entries();
+// console.log(entries.next().value); // [0 , "a"]
+// console.log(entries.next().value); // [1 , "b"]
+// console.log(entries.next().value); // [2 , "c"]
 
 // 数组实例的includes()
 // Array.prototype.includes 方法返回一个布尔值,表示某个数组是否包含给定的值,与字符串的includes方法类似.
 
-[1,2,3].includes(2); // true
-[1,2,3].includes(4); // false
-[1,2,NaN].includes(NaN); // true
+// [1,2,3].includes(2); // true
+// [1,2,3].includes(4); // false
+// [1,2,NaN].includes(NaN); // true
 
 // 该方法的第二个参数表示搜索的起始位置,默认为0
 
 // 数组的空位
 // 数组的空位值,数组的某一个位置没有任何值.比如,Array构造函数返回的数组都是空位.
-Array(3); // [ , , ]
+// Array(3); // [ , , ]
 // 上面代码中,Array(3)返回一个具有3个空位的数组.
 // 注意,空位不是undefined,一个位置的值等于undefined,依然是有值的.
 // 空位没有任何值,in运算符可以说明这一点.
-0 in [undefined,undefined,undefined]; // true
-0 in [,,]; // false
+// 0 in [undefined,undefined,undefined]; // true
+// 0 in [,,]; // false
 
 // es5对空位的处理,已经很不一致了,大多数情况下会忽略空位.
 // es6则明确的将空位转为undefined
