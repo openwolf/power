@@ -7,5 +7,6 @@
 // import './example/class';
 // import './example/enum';
 // import './example/inference-compatibility';
+// import './example/basicType';
 import './example/officeTest';
 console.log('hello index.ts');
