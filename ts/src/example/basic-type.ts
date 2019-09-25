@@ -87,19 +87,3 @@ const getLength = (tatget: string | number): number=>{
         return tatget.toString().length;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
