@@ -28,7 +28,7 @@
     "formidable": "^1.2.1",
     "koa": "^2.5.2",
     "mime-types": "^2.1.18",
-    "mongodb": "^3.1.1",
+    "mongodb": "^3.1.13",
     "serve-favicon": "^2.5.0",
     "time-stamp": "^2.0.0"
   }
